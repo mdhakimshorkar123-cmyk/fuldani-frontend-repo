@@ -1,0 +1,242 @@
+.page {
+  padding-top: calc(var(--nav-h) + 48px);
+  min-height: 70vh;
+}
+.inner {
+  max-width: 760px;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.header h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--forest-900);
+}
+.header p {
+  color: var(--muted);
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--forest-900);
+  color: var(--lime);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--r);
+  background: var(--rose-50);
+  color: var(--rose);
+  font-weight: 500;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  animation: fade-up 0.4s var(--ease);
+}
+.resultHead {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.resultHead div {
+  display: grid;
+}
+.muted {
+  font-size: 13px;
+  color: var(--muted);
+}
+.code {
+  font-family: var(--font-ui);
+  letter-spacing: 0.03em;
+}
+
+.status {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.tone-amber {
+  background: var(--amber-50);
+  color: var(--amber);
+}
+.tone-blue,
+.tone-cyan,
+.tone-violet {
+  background: var(--blue-50);
+  color: var(--blue);
+}
+.tone-green {
+  background: var(--green-50);
+  color: var(--green);
+}
+.tone-red {
+  background: var(--rose-50);
+  color: var(--rose);
+}
+.tone-gray {
+  background: var(--sand);
+  color: var(--muted);
+}
+
+.steps {
+  list-style: none;
+  padding: 28px 0 8px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.step::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -50%;
+  right: 50%;
+  height: 3px;
+  background: var(--line);
+  z-index: 0;
+}
+.step:first-child::before {
+  display: none;
+}
+.stepDone::before {
+  background: var(--lime);
+}
+.dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sand);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+.stepDone .dot {
+  background: var(--lime);
+  color: var(--forest-950);
+}
+.stepCurrent .dot {
+  box-shadow: 0 0 0 6px var(--lime-100);
+}
+.stepLabel {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.stepDate {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.terminal {
+  padding: 20px 0;
+  color: var(--text-soft);
+}
+
+.items {
+  list-style: none;
+  padding: 16px 0 0;
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+}
+.items li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.itemImg {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-sm);
+  object-fit: cover;
+}
+.itemName {
+  flex: 1;
+  display: grid;
+  font-weight: 500;
+}
+.itemName small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.totals {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line-strong);
+  color: var(--text-soft);
+}
+.totals strong {
+  color: var(--forest-900);
+  font-size: 17px;
+}
+
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    justify-items: start;
+  }
+  .step {
+    grid-template-columns: 32px 1fr;
+    justify-items: start;
+    text-align: left;
+    align-items: center;
+    column-gap: 12px;
+  }
+  .step::before {
+    display: none;
+  }
+  .stepDate {
+    grid-column: 2;
+  }
+}

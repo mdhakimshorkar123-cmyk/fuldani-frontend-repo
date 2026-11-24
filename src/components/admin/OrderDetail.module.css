@@ -1,0 +1,120 @@
+.titleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actionBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--r);
+  background: var(--forest-950);
+  color: rgb(255 255 255 / 0.7);
+}
+.actionLabel {
+  margin-right: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.actionBar :global(.btn--outline) {
+  --btn-fg: #fff;
+  --btn-border: rgb(255 255 255 / 0.25);
+}
+.actionBar :global(.btn:not(.btn--lime):not(.btn--outline)) {
+  --btn-bg: rgb(255 255 255 / 0.1);
+}
+
+.totals {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.totals dt {
+  color: var(--muted);
+}
+.totals dd {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.grand {
+  padding-top: 8px;
+  border-top: 1px dashed var(--line-strong);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--forest-900) !important;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 10px 12px;
+  font-size: 14px;
+}
+.info dt {
+  color: var(--muted);
+}
+.info dd {
+  font-weight: 500;
+  word-break: break-word;
+}
+.info a {
+  color: var(--blue);
+}
+.note {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--amber-50);
+  font-weight: 400 !important;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  position: relative;
+}
+.timeline li {
+  display: flex;
+  gap: 12px;
+  position: relative;
+  font-size: 14px;
+}
+.timeline li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 16px;
+  bottom: -14px;
+  width: 2px;
+  background: var(--line);
+}
+.tlDot {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--paper);
+}
+.tl-amber { background: #d97706; }
+.tl-blue { background: #2563eb; }
+.tl-violet { background: #7c3aed; }
+.tl-cyan { background: #0891b2; }
+.tl-green { background: #16a34a; }
+.tl-red { background: #e11d48; }
+.tl-gray { background: #9ca3af; }
+
+.tlHead {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}

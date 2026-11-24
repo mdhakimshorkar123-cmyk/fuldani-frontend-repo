@@ -1,0 +1,47 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid {
+  stroke: #ece9df;
+  stroke-width: 1;
+}
+.baseline {
+  stroke: #cfcabb;
+  stroke-width: 1;
+}
+.axis {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  fill: var(--muted);
+}
+
+.bar {
+  fill: var(--forest-700);
+  transition: fill 0.15s;
+}
+.barActive {
+  fill: var(--forest-950);
+}
+
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  display: grid;
+  gap: 1px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--forest-950);
+  color: rgb(255 255 255 / 0.7);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+}
+.tooltip strong {
+  font-size: 14px;
+  color: #fff;
+}

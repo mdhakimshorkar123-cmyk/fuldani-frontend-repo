@@ -1,0 +1,101 @@
+.region {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 300;
+  display: grid;
+  gap: 10px;
+  width: min(380px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px 12px 14px;
+  border-radius: var(--r);
+  background: var(--forest-900);
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+  animation: in 0.35s var(--ease-spring);
+}
+
+.icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--forest-950);
+}
+.error .icon {
+  background: var(--rose);
+  color: #fff;
+}
+.info .icon {
+  background: #fff;
+  color: var(--forest-900);
+}
+
+.content {
+  flex: 1;
+  display: grid;
+  min-width: 0;
+}
+.title {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+.desc {
+  font-size: 13px;
+  opacity: 0.75;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.action {
+  flex: none;
+  padding: 7px 12px;
+  border-radius: var(--r-pill);
+  background: rgb(255 255 255 / 0.12);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.action:hover {
+  background: rgb(255 255 255 / 0.22);
+}
+
+.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .region {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+}

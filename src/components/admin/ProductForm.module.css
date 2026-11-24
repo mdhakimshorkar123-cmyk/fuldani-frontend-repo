@@ -1,0 +1,45 @@
+.images,
+.colors {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.imageRow,
+.colorRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--sand);
+  color: var(--muted);
+}
+
+.colorPicker {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.hint {
+  margin-top: -4px;
+  font-size: 13px;
+  color: var(--lime-700);
+  font-weight: 500;
+}

@@ -1,0 +1,206 @@
+.section {
+  position: relative;
+  padding: 96px 0 24px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.floralLeft,
+.floralRight {
+  position: absolute;
+  top: 40px;
+  width: clamp(160px, 18vw, 280px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+.floralLeft {
+  left: -40px;
+}
+.floralRight {
+  right: -40px;
+  transform: scaleX(-1);
+}
+
+.header {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 14px;
+  border-radius: var(--r-pill);
+  background: var(--lime-100);
+  color: var(--lime-700);
+  font-size: 13px;
+  font-weight: 600;
+}
+.title {
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 700;
+  color: var(--forest-900);
+  letter-spacing: -0.015em;
+}
+.title span {
+  color: var(--lime-700);
+  background: linear-gradient(transparent 62%, var(--lime-100) 62%);
+}
+.desc {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 16.5px;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────── */
+.tabsWrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 calc(var(--gutter) * -1) 28px;
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabsWrap::-webkit-scrollbar {
+  display: none;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: var(--r-pill);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-xs);
+}
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 5px;
+  border-radius: var(--r-pill);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+.tab:hover {
+  background: var(--sand);
+}
+.tabActive,
+.tabActive:hover {
+  background: var(--forest-900);
+  color: #fff;
+}
+.tabThumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.tabCount {
+  min-width: 22px;
+  padding: 1px 7px;
+  border-radius: var(--r-pill);
+  background: rgb(127 127 127 / 0.14);
+  font-size: 12px;
+  text-align: center;
+}
+.tabActive .tabCount {
+  background: var(--lime);
+  color: var(--forest-950);
+}
+
+/* ── Toolbar ───────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--line-strong);
+}
+.count {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.count strong {
+  color: var(--forest-900);
+}
+.features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+}
+.features li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.features svg {
+  color: var(--lime-600);
+}
+.sort select {
+  min-height: 40px;
+  min-width: 180px;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+}
+
+/* ── Grid ──────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  transition: opacity 0.2s;
+}
+.gridLoading {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 64px 16px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-lg);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .features {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .tabsWrap {
+    justify-content: flex-start;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .sort select {
+    min-width: 0;
+  }
+}
